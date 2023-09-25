@@ -38,7 +38,6 @@ import {
 } from "react-share";
 import Link from "next/link";
 import ProductCard from "@/Layout/ProductCard/ProductCard";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -409,8 +408,6 @@ console.log("ifd" , id )
 
   return (
     <>
-    <NavBar />
-
     <div className={styles.ProductDetails}>
       <Head>
         <title>{productname}</title>

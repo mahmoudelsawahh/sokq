@@ -11,7 +11,6 @@ import styles from  "../page.module.css";
 import { GetFromCart } from "../../store/ShopSlice";
 import { getjsonStrings } from "../../store/ControlPanalSlice";
 import Link from "next/link";
-import NavBar from "@/Static/NavBar/NavBar";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
 import Service from "@/Static/Service/Service";
@@ -96,7 +95,6 @@ const Register = () => {
   };
   return (
     <>
-    <NavBar />
  
       {/* <Helmet>
         <title>سوق المحلة</title>

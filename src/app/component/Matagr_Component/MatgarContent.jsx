@@ -1,4 +1,35 @@
- <div className="container">
+"use client"
+import "react-image-gallery/styles/css/image-gallery.css";
+import React from 'react'
+import { MdLocationOn} from "react-icons/md";
+import ImageGallery from "react-image-gallery";
+import { ImEye } from "react-icons/im";
+import {
+    FacebookShareButton,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    TwitterShareButton,
+    TwitterIcon,
+    WhatsappShareButton,
+    WhatsappIcon,
+    TelegramShareButton,
+    TelegramIcon,
+    LinkedinShareButton,
+    LinkedinIcon,
+    ViberIcon
+  } from 'next-share'
+import Image from 'next/image';
+import {FaFacebookMessenger, FaWhatsapp , FaPhone} from "react-icons/fa";
+import Link from 'next/link';
+import LazyLoad from 'react-lazyload';
+import { AiOutlinePhone } from 'react-icons/ai';
+import MatagrLocation from "./MatagrLocation";
+import styles from "/src/app/page.module.css"
+
+const MatgarContent = ({MarketDetialsArr}) => {
+   
+  return (
+    <div className="container">
        <div>
 
       {MarketDetialsArr ? 
@@ -158,7 +189,7 @@
 
 
 
-         <div className="row" style={{marginBottom : '50px'}}>
+         {/* <div className="row" style={{marginBottom : '50px'}}>
         <div className="col-12 col-md-8">
         <LazyLoad height={"100%"} once>
                 <>
@@ -199,21 +230,7 @@
          
           
          
-          <div style={{color : '#fff', marginBottom : '50px'}}>
-             <div className="card text-center">
-             <div className="card-header" style={{ backgroundColor : '#fff'}}>
-                     <h1 style={{fontSize : '32px', color : '#055c97', textAlign : 'start'}}>الخريطه</h1>
-                  </div>
-                  <div className="card-body">
-                  <div >
-                      <LazyLoad height={"100%"} once>
-                      <MatagrLocation latt={MarketDetialsArr} />
-                        </LazyLoad>
-                    </div>
-                </div>
-                 
-            </div>
-         </div>
+         
         </LazyLoad>
       
         </div>
@@ -248,7 +265,7 @@
         </div>
 
 
-       </div>
+       </div> */}
 
      </div>
      : 
@@ -256,3 +273,7 @@
      } 
   </div>
     </div>
+  )
+}
+
+export default MatgarContent

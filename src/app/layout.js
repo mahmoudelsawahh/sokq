@@ -6,8 +6,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from '@/Static/Fotter/Fotter';
 import { Cairo } from 'next/font/google';
+
+import dynamic from "next/dynamic";
+import NavBar from '@/Static/NavBar/NavBar';
+const Footer = dynamic(() => import('@/Static/Fotter/Fotter'), {
+ssr : false
+})
+
 
 const cairo = Cairo({ 
   subsets: ['latin'] ,
@@ -25,11 +31,16 @@ export default function RootLayout({ children }) {
     <html lang="ar" dir="rtl">
       <body className={cairo.className}>
         <Providers>
-          {children}
-      </Providers>
+        <nav>
+         <NavBar/>
+       </nav>
+          <main style={{minHeight : '100vh'}}>
+            {children}
+          </main>
        <footer>
          <Footer/>
        </footer>
+      </Providers>
       </body>
     </html>
   )

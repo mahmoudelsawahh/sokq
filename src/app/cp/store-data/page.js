@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -197,9 +196,7 @@ const SotreData = () => {
     });
 
   return (
-    <>
-     <NavBar />
- 
+    <> 
     <div  className={styles.SotreData}>
       {" "}
       <Toast ref={toast} />

@@ -1,16 +1,26 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { IoIosArrowUp } from "react-icons/io";
 import Slider from "react-slick";
 import { Rating } from "primereact/rating";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BranchesHome from "../BranchesHome/BranchesHome";
-import Carousel from "react-bootstrap/Carousel";
 import styles from "../../../app/page.module.css";
 import Link from "next/link";
+import {getHomeHeaders, getMainCat } from "@/store/CategoriesSlice";
+import LazyLoad from "react-lazyload";
+import image_1 from '/public/1.webp'
+import image_2 from '/public/2imag.webp'
+import image_3 from '/public/3imag.webp'
+import image_4 from '/public/4imag.webp'
+import image_5 from '/public/5imag.webp'
+import image_6 from '/public/6imag.webp'
+import Carousel from 'react-bootstrap/Carousel';
+import Image from "next/image";
+
 const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (
@@ -28,9 +38,29 @@ const SamplePrevArrow = (props) => {
     </div>
   );
 };
-const HomeHeader = ({ Categories }) => {
+
+
+const Banners = [image_1 , image_2 , image_3 , image_4 , image_5 , image_6]
+
+const HomeHeader = () => {
+  const  {Categories}  = useSelector((state) => state.CategoriesSlice);
   const { lastOfferArr } = useSelector((state) => state.OfferSlice);
   const { HomeHeadersArr } = useSelector((state) => state.CategoriesSlice);
+
+
+
+  
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getHomeHeaders());
+    dispatch(getMainCat(0));
+  }, [dispatch]);
+
+
+
+
+
+
   const settings = {
     dots: false,
     infinite: true,
@@ -114,29 +144,7 @@ const HomeHeader = ({ Categories }) => {
       );
     });
 
-  const HeaderCarousel =
-    HomeHeadersArr.length > 0 &&
-    HomeHeadersArr.map((ele, idx) => {
-      return (
-        <Carousel.Item
-          key={idx}
-          data-url={ele.img}
-        >
-          <LazyLoadImage
-            effect="blur"
-            className={`${styles.backShadow}  d-block w-100 `}
-            src={`https://souq.deltawy.com/imag?id=${ele.img}`}
-            alt="First slide"
-            // width={800}
-            // height={520}
-          />
-          <Carousel.Caption>
-            <h3>{ele.title}</h3>
-            <p>{ele.description}</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      );
-    });
+  
   return (
     <div className={styles.HomeHeader}>
       <Container fluid>
@@ -152,14 +160,32 @@ const HomeHeader = ({ Categories }) => {
           </Col>
           <Col md={9}>
           
-            <Carousel fade>
-              {HeaderCarousel}
-            </Carousel>
+          <Carousel data-bs-theme="light">
+            {Banners.map((item , id)=>{
+              return (
+                <Carousel.Item key={id}>
+                    <Image
+                      className="d-block w-100"
+                      src={item}
+                      alt="First slide"
+                       loading="lazy"
+                       height={550}
+                    />
+                    <Carousel.Caption className="d-none d-md-block" style={{position : 'absolute' , top : '60%' , left : '50%', transform : 'translate(-50% , -50%)',}}>
+                      <h1 style={{fontWeight : 'bold'}}>سوق المحله الكبري</h1>
+                      <p>سوق المحلة   شباشب حريمي محفظة حريمي موبايلات  مكياج </p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+              )
+            })}
+          </Carousel>
           </Col>
           <Col md={2} className="d-none d-lg-flex " >
             <div  className={styles.offer_slick_header}>
               <h3>اخر العروض</h3>
-              <Slider {...settings}>{OfferSlick}</Slider>
+              <LazyLoad height={"100%"} once>
+                 <Slider {...settings}>{OfferSlick}</Slider>
+              </LazyLoad>
             </div>
           </Col>
           <Col md={12}>

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 // import { IoMdArrowDropdown } from "react-icons/io";
 // import { FiMenu } from "react-icons/fi";
@@ -16,18 +16,12 @@ const SearchHesder = (res) => {
   const [search, setSearch] = useState(searchCharInput);
   const [searchActive, setSearchActive] = useState(false);
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   if (SearchresultArr.length === 0) {
-  //     const ID = parseInt(window.localStorage.getItem("ClientId"));
-  //     const data = {
-  //       catId: 0,
-  //       userId: ID,
-  //       page: 0,
-  //       query: "",
-  //     };
-  //     dispatch(getSearchResult(data));
-  //   }
-  // }, [dispatch, SearchresultArr.length]);
+
+  useEffect(() => {
+    dispatch(getSearchResult());
+    dispatch(searchChar());   
+  }, [dispatch]);
+
 
   const SearchData = () => {
     if (search.length >= 1) {

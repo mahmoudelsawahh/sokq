@@ -240,13 +240,16 @@ const ShopSlice = createSlice({
         state.LastProductArr = action.payload.offers;
       }
       if (state.searchCharInput?.length > 0) {
-        if (action.meta.arg.page === 0) {
-          state.SearchresultArr = action.payload.offers;
-        } else {
-          state.SearchresultArr = state.SearchresultArr.concat(
-            action.payload.offers
-          );
-        }
+         if (action.meta.arg){
+          if (action.meta.arg.page === 0) {
+            state.SearchresultArr = action.payload.offers;
+          } else {
+            state.SearchresultArr = state.SearchresultArr.concat(
+              action.payload.offers
+            );
+          }
+         }
+        
       } else {
         if (action.meta.arg === 0) {
           state.SearchresultArr = action.payload.offers;

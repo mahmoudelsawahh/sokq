@@ -12,7 +12,6 @@ import styles from "../page.module.css"
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
-import NavBar from "@/Static/NavBar/NavBar";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -122,8 +121,6 @@ const Markets = () => {
 
   return (
     <>
-    <NavBar />
-
       {/* <MetaTags>
         <title> سوق المحلة</title>
       </MetaTags> */}

@@ -12,7 +12,6 @@ import styles from "../page.module.css";
 import { TiDelete } from "react-icons/ti";
 import EmptyCart from "../../../public/images/emptyCart.svg";
 import Image from "next/image";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -46,7 +45,6 @@ const Cart = () => {
       units: 1,
       userId: parseInt(window.localStorage.getItem("ClientId")),
     };
-    console.log(data);
     dispatch(GetUpdateCart(data));
   };
 
@@ -128,8 +126,6 @@ const Cart = () => {
 
   return (
     <>
-    <NavBar />
-
     <div className={styles.CartPage}>
       {/* <Helmet>
         <title>سوق المحلة</title>

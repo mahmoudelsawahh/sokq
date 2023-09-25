@@ -7,7 +7,6 @@ import { getjsonStrings, getUserInfo } from "./../../store/ControlPanalSlice";
 import Alert from "react-bootstrap/Alert";
 import SearchHesder from "@/Static/SearchHesder/SearchHesder";
 import Service from "@/Static/Service/Service";
-import NavBar from "@/Static/NavBar/NavBar";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
 import ControlNav from "@/ControlPanal/ControlNav/ControlNav";
@@ -54,7 +53,6 @@ const ControlPanal = () => {
 
   return (
     <>
-        <NavBar />
         <div className={styles.ControlPanal} >
       <Container fluid>
         <Row>

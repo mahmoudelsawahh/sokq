@@ -7,7 +7,6 @@ import styles from "../page.module.css";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
-import NavBar from "@/Static/NavBar/NavBar";
 import Link from "next/link";
 const SendCode = () => {
   const toast = useRef(null);
@@ -28,8 +27,6 @@ const SendCode = () => {
   };
   return (
     <>
-    <NavBar />
-
     <div className={`${styles.SendCode} ${styles.LoginPage}`}>
 
       {/* <Helmet>

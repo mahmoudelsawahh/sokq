@@ -1,15 +1,25 @@
-"use client"
-import FooterBar from "@/Static/FooterBar/FooterBar";
-import Home from "@/Static/Home/Home";
-import NavBar from "@/Static/NavBar/NavBar";
-import Service from "@/Static/Service/Service";
-import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
+import dynamic from "next/dynamic";
+const FooterBar = dynamic(() => import('@/Static/FooterBar/FooterBar'), {
+  ssr : false
+})
+
+  const Home = dynamic(() => import('@/Static/Home/Home'), {
+    ssr : false
+  })
+
+   const Service = dynamic(() => import('@/Static/Service/Service'), {
+      ssr : false
+   })
+
+  const LastofOffersProducts = dynamic(() => import('@/Static/اخر المنتجات/LastofOffersProducts'), {
+        ssr : false
+   })
+
 export default function App() {
 
   return (
    <>
-    <NavBar />
-   <Home />
+    <Home />
    <Service />
    <LastofOffersProducts />
    <FooterBar />

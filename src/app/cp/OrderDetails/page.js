@@ -1,6 +1,5 @@
 
 "use client"
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -29,8 +28,6 @@ const OrderDetails = () => {
   const OrderDetails = OrderDetailsArr && <div>{OrderDetailsArr.name}</div>;
   return (
     <>
-     <NavBar />
-
       {" "}
       {/* {OrderDetails} */}
       {/*  */}

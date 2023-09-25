@@ -6,7 +6,6 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import Link from "next/link";
 // import { Helmet } from "react-helmet";
 import styles from "../page.module.css"
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -15,8 +14,6 @@ const NewPassword = () => {
   const [password2, setPassword2] = useState("");
   return (
     <>
-    <NavBar />
-
     <div  className={styles.LoginPage}>
       
       <h2 className="text-center">انشاء كلمة سر جديدة</h2>

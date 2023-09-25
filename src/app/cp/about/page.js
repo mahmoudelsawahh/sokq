@@ -1,15 +1,12 @@
 "use client"
 import React from "react";
 import styles from "../../../app/page.module.css"
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
 const About = () => {
   return (
     <>
-    <NavBar />
-
 
     <div className={styles.About} >
       <h1  className={styles.main_heading} >عن الموقع</h1>

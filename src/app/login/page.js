@@ -13,7 +13,6 @@ import { getjsonStrings } from "../../store/ControlPanalSlice";
 // import { Helmet } from "react-helmet";
 import styles from "../page.module.css";
 import Link from "next/link";
-import NavBar from "@/Static/NavBar/NavBar";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -115,7 +114,6 @@ const Login = () => {
           content="https://apps.souq-mahala.com/javax.faces.resource/logo.png.html?ln=imgs"
         />
       </Helmet> */}
-      <NavBar/>
       <Toast ref={toast} />
       <div className={styles.LoginPage}>
         <h2 className="text-center">تسجيل الدخول</h2>

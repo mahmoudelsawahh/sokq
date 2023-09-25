@@ -1,6 +1,5 @@
 "use client"
 import styles from "../../../app/page.module.css"
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -199,7 +198,6 @@ const MyProducts = () => {
 
   return (
     <>
-    <NavBar />
     <div className={styles.MyProducts}>
       <Toast ref={toast} />
       <h1 className={styles.main_heading}>منتجاتي</h1>

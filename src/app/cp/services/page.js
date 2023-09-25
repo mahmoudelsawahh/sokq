@@ -16,7 +16,6 @@ import { RiAddCircleLine } from "react-icons/ri";
 import { Toast } from "primereact/toast";
 import styles from "../../../app/page.module.css";
 import Image from "next/image";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -145,7 +144,6 @@ const Services = () => {
 
   return (
     <>
-    <NavBar />
     <div className={`${styles.MyProducts}  ${styles.Services}`}>
       <Toast ref={toast} />
 

@@ -8,7 +8,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Container } from "react-bootstrap";
 import styles from "../../page.module.css"
 import Link from "next/link";
-import NavBar from "@/Static/NavBar/NavBar";
 import FooterBar from "@/Static/FooterBar/FooterBar";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import Service from "@/Static/Service/Service";
@@ -168,8 +167,6 @@ const CartProcess = () => {
 
   return (
 <>
-    <NavBar />
-
     <div  className={styles.CartProcess}>
       {/* <MetaTags>
         <title> سوق المحلة</title>

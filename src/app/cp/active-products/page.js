@@ -1,5 +1,4 @@
 "use client"
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -83,9 +82,7 @@ const ActiveProducts = () => {
       </div>
     );
   return (
-    <>
-       <NavBar />
-  
+    <>  
     <div>
       <h1 className={styles.main_heading} >الطلبات النشطة</h1>
 

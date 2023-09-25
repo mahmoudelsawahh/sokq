@@ -24,18 +24,13 @@ const Home = () => {
  
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getHomeHeaders());
-    dispatch(getSearchResult());
-    dispatch(searchChar());
     dispatch(Subcategories());
     dispatch(getBranchesProducts());
-    dispatch(getMarkets(0));
     dispatch(getOffers(0));
-    dispatch(getMainCat(0));
     dispatch(getMostViewed());
-    dispatch(catDetails());
-   
+    dispatch(catDetails(1));
   }, [dispatch]);
+
 
   useEffect(() => {
     const ID = parseInt(window.localStorage.getItem("ClientId"));
@@ -52,47 +47,6 @@ const Home = () => {
   return (
     <div>
 
-
-      {/* <Helmet>
-        <title>سوق المحلة</title>
-        <meta
-          name="description"
-          content=" سوق المحلة   شباشب حريمي محفظة حريمي موبايلات أساور مكياج بدي و تونيك حريمي"
-        />
-
-        <meta itemprop="name" content="سوق المحلة" />
-        <meta
-          itemprop="description"
-          content=" سوق المحلة   شباشب حريمي محفظة حريمي موبايلات أساور مكياج بدي و تونيك حريمي"
-        />
-        <meta
-          itemprop="image"
-          content="https://apps.souq-mahala.com/javax.faces.resource/logo.png.html?ln=imgs"
-        />
-
-        <meta property="og:url" content="https://souq-mahala.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="سوق المحلة" />
-        <meta
-          property="og:description"
-          content=" سوق المحلة   شباشب حريمي محفظة حريمي موبايلات أساور مكياج بدي و تونيك حريمي"
-        />
-        <meta
-          property="og:image"
-          content="https://apps.souq-mahala.com/javax.faces.resource/logo.png.html?ln=imgs"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="سوق المحلة" />
-        <meta
-          name="twitter:description"
-          content=" سوق المحلة   شباشب حريمي محفظة حريمي موبايلات أساور مكياج بدي و تونيك حريمي"
-        />
-        <meta
-          name="twitter:image"
-          content="https://apps.souq-mahala.com/javax.faces.resource/logo.png.html?ln=imgs"
-        />
-      </Helmet> */}
       <Container fluid>
         <Row>
           <Col xs={12} md={3}  className={styles.diff_col_screen2}>
@@ -106,11 +60,10 @@ const Home = () => {
         </Row>
       </Container>
 
-      <HomeHeader Categories={Categories} />
+      <HomeHeader />
 
-      {/* <BranchesHome Categories={Categories} /> */}
       <MatgersHome />
-      <SlickSections Categories={Categories} />
+      <SlickSections Categories={Categories}/>
     </div>
   );
 };

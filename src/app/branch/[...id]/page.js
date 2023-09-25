@@ -1,5 +1,4 @@
 "use client"
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -38,7 +37,6 @@ const BranchesProducts = () => {
     BranchesLoading,
   } = useSelector((state) => state.CategoriesSlice);
   const { id, name } = useParams();
-
   // const router = useRouter();
   // const { id, name } = router.query || {};
   useEffect(() => {
@@ -51,7 +49,7 @@ const BranchesProducts = () => {
       };
       dispatch(getBranchesProducts(data));
     }
-  }, [dispatch, id, page]);
+  }, [dispatch]);
 
   const FetchData = () => {
     setPagenumber2((state) => state + 1);
@@ -200,8 +198,6 @@ const BranchesProducts = () => {
 
   return (
     <>
-     <NavBar />
-
       <Head>
         <title>{name}</title>
         <meta itemprop="name" content={name} />
@@ -320,18 +316,7 @@ const BranchesProducts = () => {
           </div>
             <Container fluid>
               <BranchesHome Categories={Categories} />
-              <InfiniteScroll
-                dataLength={
-                  getBranchesProductsArr.length > 0
-                    ? getBranchesProductsArr.length
-                    : 10
-                }
-                next={FetchData}
-                hasMore={true}
-                // loader={<h4>Loading...</h4>}
-              >
-                <Row>{ShopData}</Row>
-              </InfiniteScroll>
+              <Row>{ShopData}</Row>
             </Container>
           </Col>
         </Row>

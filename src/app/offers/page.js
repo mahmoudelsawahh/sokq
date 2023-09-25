@@ -13,7 +13,6 @@ import { Accordion, AccordionTab } from "primereact/accordion";
 import styles from "../page.module.css"
 import BranchesHome from "@/Static/Home/BranchesHome/BranchesHome";
 import SearchHesder from "@/Static/SearchHesder/SearchHesder";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import FooterBar from "@/Static/FooterBar/FooterBar";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
@@ -114,8 +113,6 @@ const Offer = () => {
   );
   return (
     <>
-    <NavBar />
-
       {/* <Helmet>
         <title>سوق المحلة</title>
         <meta

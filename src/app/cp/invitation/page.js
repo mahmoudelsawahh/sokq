@@ -13,7 +13,6 @@ import {
   TelegramIcon,
 } from "react-share";
 import  styles from "../../../app/page.module.css";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -23,8 +22,6 @@ const Invitation = () => {
   );
   return (
     <>
-    <NavBar />
-
     <div className={styles.Invitation} >
       <h1 className={styles.main_heading}>دعوة الاصدقاء </h1>
       <div className={styles.InviteIcons}>

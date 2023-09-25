@@ -7,7 +7,6 @@ import { getMatgarOrders } from "../../../store/ControlPanalSlice";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import working from "../../../../public/images/emptyCart.svg";
 import { Router } from "next/router";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -86,9 +85,7 @@ const Orders = () => {
 
   return (
     <>
-    
-    <NavBar />
-    <div  className={styles.Orders}>
+        <div  className={styles.Orders}>
       <h1 className={styles.main_heading}>جميع الطلبات</h1>
       <Container>
         <Row>{OrderMatger}</Row>

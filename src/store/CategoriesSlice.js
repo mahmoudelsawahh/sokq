@@ -45,8 +45,8 @@ export const catDetails = createAsyncThunk(
     try {
       const data = await axios
         .post(`${Url}/rest/rest.matgar/getCategoryDetails`, {
-          uid: 0,
-          catId: id,
+          "uid": 0,
+          "catId": id,
         })
         .then((res) => res.data);
       return data;

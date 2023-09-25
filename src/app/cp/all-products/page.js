@@ -1,6 +1,5 @@
 "use client"
 import styles from "../../../app/page.module.css"
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -78,7 +77,6 @@ const ALLProdcuts = () => {
     );
   return (
     <>
-    <NavBar />
     <div>
       <h1 className={styles.main_heading}>جميع الطلبات</h1>
       <Container>

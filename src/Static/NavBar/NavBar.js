@@ -234,41 +234,6 @@ const NavBar = () => {
         </li>
       );
     });
-    // const handleScroll = () => {
-    //   if (window.scrollY >= 100 && window.innerWidth >= 500) {
-    //     setNavBarCompTowVisible(true);
-    //   } else {
-    //     setNavBarCompTowVisible(false);
-    //   }
-    // };
-    // const handleScroll = () => {
-    //   if (window.scrollY >= 100 && window.innerWidth >= 500) {
-    //     document.querySelector(".NavBarCompTow").style.opacity = 1;
-    //     document.querySelector(".NavBarCompTow").style.display = "block";
-    //   } else {
-    //     document.querySelector(".NavBarCompTow").style.opacity = 0;
-    //     document.querySelector(".NavBarCompTow").style.display = "none";
-    //   }
-    // };
-//     document.addEventListener("DOMContentLoaded", function () {
-//   const handleScroll = () => {
-//     if (window.scrollY >= 100 && window.innerWidth >= 500) {
-//       document.querySelector(".NavBarCompTow").style.opacity = 1;
-//       document.querySelector(".NavBarCompTow").style.display = "block";
-//     } else {
-//       document.querySelector(".NavBarCompTow").style.opacity = 0;
-//       document.querySelector(".NavBarCompTow").style.display = "none";
-//     }
-//   };
-
-//   window.addEventListener("scroll", handleScroll);
-// });
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   const Searchhandeller = (e) => {
     if (search.length >= 1) {
@@ -386,15 +351,15 @@ const NavBar = () => {
             ))}
           </div>
           <div  className={styles.Souq}>
-            {/* <Link href="/" > */}
+            <Link href="/" >
               <Image
                 src={logo}
                 alt="logo"
                 width={180}
                 height={75}
-                effect="blur"
+                loading="lazy"
               />
-            {/* </Link> */}
+            </Link>
           </div>
           <div  className={`${styles.NavList} ${styles.disFlex}`}>
             <nav className="navbar navbar-expand-lg navbar-light " >

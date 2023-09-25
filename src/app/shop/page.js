@@ -14,7 +14,6 @@ import styles from "../page.module.css"
 import ProductCard from "@/Layout/ProductCard/ProductCard";
 import BranchesHome from "@/Static/Home/BranchesHome/BranchesHome";
 import SearchHesder from "@/Static/SearchHesder/SearchHesder";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import FooterBar from "@/Static/FooterBar/FooterBar";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
@@ -176,7 +175,6 @@ const ShopProducts = () => {
 
   return (
     <> 
-    <NavBar />
     <div className={styles.ShopPage} >
       {/* <Helmet> */}
         {/* <title>{productname}</title>

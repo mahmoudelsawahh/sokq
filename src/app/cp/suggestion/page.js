@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { Toast } from "primereact/toast";
 import styles from "../../../app/page.module.css";
 import { makeComplain } from "@/store/ControlPanalSlice";
-import NavBar from "@/Static/NavBar/NavBar";
 import Service from "@/Static/Service/Service";
 import LastofOffersProducts from "@/Static/اخر المنتجات/LastofOffersProducts";
 import FooterBar from "@/Static/FooterBar/FooterBar";
@@ -50,8 +49,6 @@ const Suggestion = () => {
   return (
 
     <>
-    <NavBar />
-
     <div className={`${styles.Suggestion} ${styles.MyProducts}`}>
 
       <Toast ref={toast} />
