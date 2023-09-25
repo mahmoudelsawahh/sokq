@@ -1,3 +1,4 @@
+import { baseUrl } from "@/app/baseUrl";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // import { Url } from "../../App";
@@ -11,7 +12,7 @@ export const getMarkets = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getMatgars`, {
+        .post(`${baseUrl}/rest/rest.matgar/getMatgars`, {
           page: Pid,
         })
         .then((res) => res.data);
@@ -28,7 +29,7 @@ export const getMarketsDetails = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getMatgarDetails/`, {
+        .post(`${baseUrl}/rest/rest.matgar/getMatgarDetails/`, {
           id,
           page: 0,
         })

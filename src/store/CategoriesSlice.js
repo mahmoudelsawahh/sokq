@@ -1,3 +1,4 @@
+import { baseUrl } from "@/app/baseUrl";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // import { Url } from "../../App";
@@ -11,7 +12,7 @@ export const getMainCat = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.category/getMainCategories/`, {
+        .post(`${baseUrl}/rest/rest.category/getMainCategories/`, {
           page: id,
         })
         .then((res) => res.data);
@@ -28,7 +29,7 @@ export const getHomeHeaders = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .get(`${Url}/rest/rest.matgar/normalHeaders`)
+        .get(`${baseUrl}/rest/rest.matgar/normalHeaders`)
         .then((res) => res.data);
         console.log("getHomeHeaders" , data)
       return data;
@@ -44,7 +45,7 @@ export const catDetails = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getCategoryDetails`, {
+        .post(`${baseUrl}/rest/rest.matgar/getCategoryDetails`, {
           "uid": 0,
           "catId": id,
         })
@@ -63,7 +64,7 @@ export const Subcategories = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.category/Subcategories`, {
+        .post(`${baseUrl}/rest/rest.category/Subcategories`, {
           id,
         })
         .then((res) => res.data);
@@ -81,7 +82,7 @@ export const getBranchesProducts = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(` ${Url}/rest/rest.matgar/searchProduct`, {
+        .post(` ${baseUrl}/rest/rest.matgar/searchProduct`, {
           ...items,
           // headers :{
           //   "Content-Type" : "application/json"
@@ -101,7 +102,7 @@ export const getMostViewed = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(` ${Url}/rest/rest.matgar/getMostViewed`, {
+        .post(` ${baseUrl}/rest/rest.matgar/getMostViewed`, {
           id: 4,
           page: 0,
         })

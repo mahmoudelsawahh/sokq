@@ -80,7 +80,7 @@ const MatagrProduct = ({MarketDetialsArr}) => {
           <h1 style={{fontSize : '22px' , padding : '10px 0px' , color : '#055c97'}}>منتجات مشابهه</h1>
           <div className='card p-3'>
           {MarketDetialsArr ? 
-            <Slider {...settings} slidesToShow={ MarketDetialsArr.products ==  1 ? 1 : MarketDetialsArr.products == 2 ? 2 : MarketDetialsArr.products == 3 ? 3 : 4}>
+            <Slider {...settings} slidesToShow={ MarketDetialsArr.products.length ==  1 ? 1 : MarketDetialsArr.products.length == 2 ? 2 : MarketDetialsArr.products.length == 3 ? 3 : 4}>
             {MarketDetialsArr.products.map((item , id)=>{
                return (
                    <Link href={`/product/${item.id}/${item.name}`} key={id}>

@@ -142,12 +142,12 @@ console.log("ifd" , id )
               src={`https://souq.deltawy.com/imag?id=${ele}`}
               alt={productname}
             />
-            <LazyLoadImage 
+            {/* <LazyLoadImage 
               src={`https://souq.deltawy.com/imag?id=${ele}`}
               alt={productname}
               // width="250"
               preview
-            />
+            /> */}
           </div>
         </div>
       );

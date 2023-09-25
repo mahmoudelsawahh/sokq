@@ -1,4 +1,8 @@
-import MatagrComponent from "@/app/component/Matagr_Component/MatagrComponent"
+import dynamic from 'next/dynamic'
+ 
+const MatagrComponent = dynamic(() => import('@/app/component/Matagr_Component/MatagrComponent'), {
+  ssr : false
+})
 
 const page = () => {
   return (

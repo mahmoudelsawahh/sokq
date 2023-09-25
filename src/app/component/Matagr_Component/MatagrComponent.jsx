@@ -29,5 +29,3 @@ const MatagrComponent = () => {
 }
 
 export default MatagrComponent
-
-

@@ -112,6 +112,7 @@ const SlickSections = ({Categories}) => {
                         Categories? Categories.cats
                           ?.filter((ele) => ele.catList.length > 0)
                           .map((ele, idx) => {
+                            
                             return (
                               <div key={idx} className="row d-flex align-items-center text-center">
                                <div className="col-md-3 col-12">
@@ -123,20 +124,20 @@ const SlickSections = ({Categories}) => {
                                   />
                                </div>
                                <div className="col-md-8 col-12">
-                                 <Slider {...settings} slidesToShow={ ele.catList.length ==  1 ? 1 : ele.catList.length == 2 ? 2 : ele.catList.length == 3 ? 3 : 4}>
-                                   {ele.catList.map((item , id)=>{
+                                 <Slider {...settings} slidesToShow={ ele.products.length ==  1 ? 1 : ele.products.length == 2 ? 2 : ele.products.length == 3 ? 3 : 4}>
+                                   {ele.products.map((item , id)=>{
                                     return (
-                                      <Link href={`matgarr/${item.id}/${item.name}`} key={id}>
+                                      <Link href={`product/${item.id}/${item.name}`} key={id}>
                                       <ProductCard
                                             key={id}
                                             CatName={item.name}
                                             ProductName={item.name}
-                                            image={item.image}
+                                            image={item &&item.images[0]}
                                             Rate={5}
                                             id={item.id}
                                             pathName={item.name}
-                                            MarketImage={item.image}
-                                            Goto={"matgar"}
+                                            MarketImage={item &&item.images[1]}
+                                            Goto={"product"}
                                             className={styles.Slick_Product}
                                           />
                                       </Link>

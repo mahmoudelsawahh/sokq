@@ -1,3 +1,4 @@
+import { baseUrl } from "@/app/baseUrl";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // import { Url } from "../../App";
@@ -11,7 +12,7 @@ export const getRegister = createAsyncThunk(
     const { rejectWithValue, dispatch } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/register`, {
+        .post(`${baseUrl}/rest/rest.matgar/register`, {
           ...regData,
         })
         .then((res) => res.data);
@@ -33,7 +34,7 @@ export const getLogin = createAsyncThunk(
     const { rejectWithValue, dispatch } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/login`, {
+        .post(`${baseUrl}/rest/rest.matgar/login`, {
           ...logData,
         })
         .then((res) => res.data);
@@ -60,7 +61,7 @@ export const getVerify = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/verify`, {
+        .post(`${baseUrl}/rest/rest.matgar/verify`, {
           ...mail,
         })
         .then((res) => res.data);

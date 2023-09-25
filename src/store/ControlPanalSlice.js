@@ -1,5 +1,6 @@
 // ControlPanalSlice
 
+import { baseUrl } from "@/app/baseUrl";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -14,7 +15,7 @@ export const getUserInfo = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getUserInfo`, {
+        .post(`${baseUrl}/rest/rest.matgar/getUserInfo`, {
           uid: id,
         })
         .then((res) => res.data);
@@ -31,7 +32,7 @@ export const UpdateUserInfo = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/updateUserInfo`, {
+        .post(`${baseUrl}/rest/rest.matgar/updateUserInfo`, {
           ...userInfo,
         })
         .then((res) => res.data);
@@ -48,7 +49,7 @@ export const getMatgarServices = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgarservice/getMatgarServices`, {
+        .post(`${baseUrl}/rest/rest.matgarservice/getMatgarServices`, {
           id,
         })
         .then((res) => res.data);
@@ -65,7 +66,7 @@ export const SaveService = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgarservice/saveService`, {
+        .post(`${baseUrl}/rest/rest.matgarservice/saveService`, {
           ...Services,
         })
         .then((res) => res.data);
@@ -83,7 +84,7 @@ export const UpdateService = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgarservice/updateService`, {
+        .post(`${baseUrl}/rest/rest.matgarservice/updateService`, {
           ...Services,
         })
         .then((res) => res.data);
@@ -101,7 +102,7 @@ export const getMatgarProducts = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getMatgarProducts`, {
+        .post(`${baseUrl}/rest/rest.matgar/getMatgarProducts`, {
           id,
         })
         .then((res) => res.data);
@@ -119,7 +120,7 @@ export const AddProduct = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/addProduct`, {
+        .post(`${baseUrl}/rest/rest.matgar/addProduct`, {
           ...product,
         })
         .then((res) => res.data);
@@ -137,7 +138,7 @@ export const AddProduct = createAsyncThunk(
 //     const { rejectWithValue } = thunkAPI;
 //     try {
 //       const data = await axios
-//         .post(`${Url}/rest/rest.matgar/saveImages`, {
+//         .post(`${baseUrl}/rest/rest.matgar/saveImages`, {
 //           ...product,
 //         })
 //         .then((res) => res.data);
@@ -154,7 +155,7 @@ export const saveLogo = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/saveLogo`, {
+        .post(`${baseUrl}/rest/rest.matgar/saveLogo`, {
           ...product,
         })
         .then((res) => res.data);
@@ -171,7 +172,7 @@ export const getLogo = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getLogo`, {
+        .post(`${baseUrl}/rest/rest.matgar/getLogo`, {
           id,
         })
         .then((res) => res.data);
@@ -189,7 +190,7 @@ export const GetMatgerCats = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.category/uc/`, {
+        .post(`${baseUrl}/rest/rest.category/uc/`, {
           id,
         })
         .then((res) => res.data);
@@ -207,7 +208,7 @@ export const GetMatgerOffers = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getMatgarOffers`, {
+        .post(`${baseUrl}/rest/rest.matgar/getMatgarOffers`, {
           ...offers,
         })
         .then((res) => res.data);
@@ -225,7 +226,7 @@ export const AddOffer = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.product/saveOffer`, {
+        .post(`${baseUrl}/rest/rest.product/saveOffer`, {
           ...product,
         })
         .then((res) => res.data);
@@ -243,7 +244,7 @@ export const getMatgarInfo = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getMatgarInfo`, {
+        .post(`${baseUrl}/rest/rest.matgar/getMatgarInfo`, {
           uid,
         })
         .then((res) => res.data);
@@ -260,7 +261,7 @@ export const updateMatgarInfo = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/updateMatgarInfo`, {
+        .post(`${baseUrl}/rest/rest.matgar/updateMatgarInfo`, {
           ...upData,
         })
         .then((res) => res.data);
@@ -277,7 +278,7 @@ export const getUserImages = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getUserImages`, {
+        .post(`${baseUrl}/rest/rest.matgar/getUserImages`, {
           id,
         })
         .then((res) => res.data);
@@ -295,7 +296,7 @@ export const saveImages = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/saveImages`, {
+        .post(`${baseUrl}/rest/rest.matgar/saveImages`, {
           ...upData,
         })
         .then((res) => res.data);
@@ -313,7 +314,7 @@ export const saveMatgarType = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/saveMatgarType`, {
+        .post(`${baseUrl}/rest/rest.matgar/saveMatgarType`, {
           ...upData,
         })
         .then((res) => res.data);
@@ -331,7 +332,7 @@ export const getMatgarOrders = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getMatgarOrders`, {
+        .post(`${baseUrl}/rest/rest.matgar/getMatgarOrders`, {
           ...upData,
         })
         .then((res) => res.data);
@@ -349,7 +350,7 @@ export const getOrderDetails = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getOrderDetails`, {
+        .post(`${baseUrl}/rest/rest.matgar/getOrderDetails`, {
           id,
         })
         .then((res) => res.data);
@@ -367,7 +368,7 @@ export const getCustomerOrdersJson = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getCustomerOrdersJson`, {
+        .post(`${baseUrl}/rest/rest.matgar/getCustomerOrdersJson`, {
           id,
         })
         .then((res) => res.data);
@@ -385,7 +386,7 @@ export const getActiveCustomerrders = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getActiveCustomerrders`, {
+        .post(`${baseUrl}/rest/rest.matgar/getActiveCustomerrders`, {
           id,
         })
         .then((res) => res.data);
@@ -403,7 +404,7 @@ export const getjsonStrings = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getjsonStrings`, {
+        .post(`${baseUrl}/rest/rest.matgar/getjsonStrings`, {
           id,
         })
         .then((res) => res.data);
@@ -420,7 +421,7 @@ export const makeComplain = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/makeComplain`, {
+        .post(`${baseUrl}/rest/rest.matgar/makeComplain`, {
           ...obj,
         })
         .then((res) => res.data);

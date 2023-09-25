@@ -1,3 +1,4 @@
+import { baseUrl } from "@/app/baseUrl";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // import { Url } from "../../App";
@@ -12,7 +13,7 @@ export const getOffers = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/getLastOffers`, {
+        .post(`${baseUrl}/rest/rest.matgar/getLastOffers`, {
           id: 0,
           page: Pid,
         })

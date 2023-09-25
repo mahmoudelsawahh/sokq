@@ -1,3 +1,4 @@
+import { baseUrl } from "@/app/baseUrl";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // import { Url } from "../../App";
@@ -11,7 +12,7 @@ const Url = "https://souq.deltawy.com";
 //     const { rejectWithValue } = thunkAPI;
 //     try {
 //       const data = await axios
-//         .post(`${Url}/rest/rest.matgar/getLastProducts/`, {
+//         .post(`${baseUrl}/rest/rest.matgar/getLastProducts/`, {
 //           id: 0,
 //           page: Pid,
 //         })
@@ -29,7 +30,7 @@ export const AddToCart = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(`${Url}/rest/rest.matgar/makeOrder`, {
+        .post(`${baseUrl}/rest/rest.matgar/makeOrder`, {
           ...item,
         })
         .then((res) => res.data);
@@ -46,7 +47,7 @@ export const getProductDetails = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(` ${Url}/rest/rest.matgar/getProductDetails`, {
+        .post(` ${baseUrl}/rest/rest.matgar/getProductDetails`, {
           ...proData,
         })
         .then((res) => res.data);
@@ -63,7 +64,7 @@ export const getSearchResult = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(` ${Url}/rest/rest.matgar/searchProduct`, {
+        .post(` ${baseUrl}/rest/rest.matgar/searchProduct`, {
           ...items,
            headers :{
             "Content-Type" : "application/json"
@@ -83,7 +84,7 @@ export const GetFromCart = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(` ${Url}/rest/rest.matgar/getCart`, {
+        .post(` ${baseUrl}/rest/rest.matgar/getCart`, {
           id,
         })
         .then((res) => res.data);
@@ -101,7 +102,7 @@ export const GetUpdateCart = createAsyncThunk(
     try {
       // }/rest/rest.matgar/updateProductOrderCount
       const data = await axios
-        .post(` ${Url}/rest/rest.matgar/updateProductOrderCount`, {
+        .post(` ${baseUrl}/rest/rest.matgar/updateProductOrderCount`, {
           ...info,
         })
         .then((res) => res.data);
@@ -118,7 +119,7 @@ export const DeleteProduct = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(` ${Url}/rest/rest.orderline/delete`, {
+        .post(` ${baseUrl}/rest/rest.orderline/delete`, {
           id,
         })
         .then((res) => res.data);
@@ -135,7 +136,7 @@ export const UpdateProdectViews = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const data = await axios
-        .post(` ${Url}/rest/rest.product/updateProductViews`, {
+        .post(` ${baseUrl}/rest/rest.product/updateProductViews`, {
           id,
         })
         .then((res) => res.data);
