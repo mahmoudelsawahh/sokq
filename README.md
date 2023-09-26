@@ -1,258 +1,36 @@
- <div className="container">
-       <div>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-      {MarketDetialsArr ? 
-     <div style={{minHeight : '100vh', position : 'relative'}}>
-       {screen.width < 767 ? 
-         null
-        :
-        <div style={{position : 'relative', height : '400px', marginBottom : '50px', display : 'flex', justifyContent : 'center'}} className="responsive-Layout">
-      <Image src={`https://souq.deltawy.com/imag?id=${MarketDetialsArr.coverImage}`} alt={MarketDetialsArr.name} width={700} height={400} priority={true} />
-      
-       </div>
-        } 
+## Getting Started
 
+First, run the development server:
 
-        <div className="d-flex d-md-none" style={{position : 'fixed', left : 0 , overflow : 'hidden',bottom : 0 , justifyContent : 'center', alignContent : 'center', width : '100%', zIndex : 555}}>
-         <div style={{background : '#0084ff', width : '100%', textAlign : 'center', padding : '5px 0px'}}>
-          <FaFacebookMessenger fontSize={30} style={{color : '#fff'}} onClick={()=> router.push(MarketDetialsArr.face.replace('https://www.facebook.com', 'https://www.messenger.com/t'))}/>
-         </div>
-          {
-            MarketDetialsArr.whats > 2 ? 
-            <div style={{background : '#25d366', width : '100%', textAlign : 'center', padding : '6px 0px', cursor : 'pointer'}} onClick={()=> router.push(`${MarketDetialsArr.whats}`)}>
-        <FaWhatsapp fontSize={30} style={{color : '#fff'}}/>
-        </div>
-            : 
-            null
-          }
-        <div style={{background : '#379d00', width : '100%', textAlign : 'center', padding : '6px 0px', cursor : 'pointer'}}>
-         <Link href={`tel:${MarketDetialsArr.phone}`}>
-         <FaPhone fontSize={28} style={{color : '#fff'}}/>
-         </Link>
-        </div>
-    </div>    
-    
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-    <div style={{gap : '20px', padding : '0px 0px', paddingBottom : '50px' }} className="d-flex flex-md-row flex-column align-items-center align-items-md-center">
-              <LazyLoad height={"100%"} once>
-              <div style={{boxShadow : '5px 5px 12px rgba(0,0,0,.15)', border : '5px solid #fff', width : '140px', height : '140px', borderRadius : '50%', overflow : 'hidden'}}>
-              <Image src={`https://souq.deltawy.com/imag?id=${MarketDetialsArr.matgarImage}`} alt={MarketDetialsArr.name}
-                width={140}
-                height={140}
-                style={{borderRadius : '50%'}}
-                loading="lazy"
-              />
-              </div>
-              </LazyLoad>
-                <div  className="text-md-end ">
-                  <h1 style={{fontSize : '28px', color : '#000', fontWeight : 'bold', textAlign : 'center', margin: '15px 0px'}}>{MarketDetialsArr.name}</h1>                            
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-                   <div style={{padding : '15px 0px'}}>
-                   <Link href={`https://www.google.com/maps/search/location/@${MarketDetialsArr.lat},${MarketDetialsArr.lng},12z?entry=ttu`} style={{color : '#055c97', fontSize : '16px', fontWeight : 'bold', padding : '5px 0px'}}>
-                   <MdLocationOn style={{fontSize : '20px'}}/>  {MarketDetialsArr.address}
-                  </Link>
-                   </div>
-         
-                   {MarketDetialsArr.url.length > 0 ? null
-                   :
-                   <div style={{padding : '15px 0px'}}>
-                   <Link href={MarketDetialsArr.url} style={{color : '#055c97', fontSize : '16px', fontWeight : 'bold', padding : '5px 0px'}}>
-                  <AiOutlineGlobal style={{fontSize : '25px'}}/> {MarketDetialsArr.url}
-                  </Link>
-                   </div>
-                    }
-                   
-                   {
-                    MarketDetialsArr.whats.length > 2 ? 
-                    <div style={{padding : '15px 0px'}}>
-                     <Link href={MarketDetialsArr.whats} style={{color : '#055c97', fontSize : '16px', fontWeight : 'bold', padding : '5px 0px'}}>
-                    <FaWhatsapp style={{fontSize : '25px'}}/> {MarketDetialsArr.phone}
-                    </Link>
-                     </div>
-                    : null
-                   }
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-                     <div style={{padding : '15px 0px'}}>
-                     <Link href={`tel:${MarketDetialsArr.phone}`} style={{color : '#055c97', fontSize : '16px', fontWeight : 'bold', padding : '5px 0px'}}>
-                    <AiOutlinePhone style={{fontSize : '25px'}}/> {MarketDetialsArr.phone}
-                    </Link>
-                     </div>
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-                   {screen.width < 767 ? 
-                    <div style={{padding : '0px 20px'}}  className={styles.Views_section}>
-                <h1 style={{fontSize : '28px'}}>عدد المشاهدات</h1>
-                <ImEye />
-                {/* <p>{MarketDetialsArr.views}</p> */}
-                <p>5500</p>
+## Learn More
 
-              </div>
+To learn more about Next.js, take a look at the following resources:
 
-                   :
-                   null
-                   }
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-                    <div style={{marginLeft : '5px', textAlign : 'center', padding : '20px 0px' , flexWrap : 'wrap'}} className="d-flex justify-content-md-center justify-content-center">
-                      <FacebookShareButton
-                        url={`${MarketDetialsArr.url}`}
-                        title={`${MarketDetialsArr.name}`}
-                      >
-                        <FacebookIcon size={45} style={{margin : '0px 10px'}} round />
-                      </FacebookShareButton>
-                      
-                      <TwitterShareButton
-                        url={`${MarketDetialsArr.url}`}
-                        title={`${MarketDetialsArr.name}`}
-                        hashtag={`${MarketDetialsArr.name}`}
-                      >
-                        <TwitterIcon size={45} style={{margin : '0px 10px'}} round />
-                      </TwitterShareButton>
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-                      <WhatsappShareButton
-                        url={`${MarketDetialsArr.url}`}
-                        title={`${MarketDetialsArr.name}`}
-                        hashtag={`${MarketDetialsArr.name}`}
-                      >
-                        <WhatsappIcon size={45} style={{margin : '0px 10px'}} round />
-                      </WhatsappShareButton>
+## Deploy on Vercel
 
-                      <TelegramShareButton
-                        url={`${MarketDetialsArr.url}`}
-                        title={`${MarketDetialsArr.name}`}
-                        hashtag={`${MarketDetialsArr.name}`}
-                      >
-                        <TelegramIcon size={45} style={{margin : '0px 10px'}} round />
-                      </TelegramShareButton>
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-                      <LinkedinShareButton
-                        url={`${MarketDetialsArr.url}`}
-                        title={`${MarketDetialsArr.name}`}
-                        hashtag={`${MarketDetialsArr.name}`}
-                      >
-                        <LinkedinIcon size={45} style={{margin : '0px 10px'}} round />
-                      </LinkedinShareButton>
-
-                        {/* <Link href="/rss.xml">
-                      <Image src={RssImage} alt="rss-image" width={45} height={45}/>
-                      </Link> */}
-                      {/* <Link href="/page/sitemap.xml">
-                      <Image src={SitMapIcon} alt="rss-image" width={45} height={45} style={{margin : '0px 10px'}}/>
-                      </Link> */}
-                    </div>
-          
-                  <div>
-                </div>
-                </div>
-                
-        </div>
-
-
-        <div style={{color : '#fff', marginBottom : '50px'}}>
-             <div className="card text-center">
-                  <div className="card-body">
-                    <h1 className="card-title" style={{fontSize : '30px'}}>{MarketDetialsArr.name}</h1>
-                    <p className="card-text" style={{lineHeight : '50px', direction : 'ltr'}}>{MarketDetialsArr.description}</p>
-                  </div>
-            </div>
-         </div>
-
-
-
-
-         <div className="row" style={{marginBottom : '50px'}}>
-        <div className="col-12 col-md-8">
-        <LazyLoad height={"100%"} once>
-                <>
-            {
-                MarketDetialsArr.images.length > 0 ?
-                <LazyLoad height={"100%"} once>
-                    <ImageGallery showNav={false} showFullscreenButton={false} showPlayButton={false} items={
-                        MarketDetialsArr.images.map((item)=>{
-                            return (
-                                {
-                                    original: `https://souq.deltawy.com/imag?id=${item}`,
-                                    thumbnail: `https://souq.deltawy.com/imag?id=${item}`,
-                            }
-                            )
-                        })
-                    } isRTL={true} lazyLoad={true}/>
-                </LazyLoad>
-                : null 
-            }
-            </>
-         </LazyLoad>
-        <LazyLoad height={"100%"} once>
-           {
-            MarketDetialsArr.services.length > 0 ?
-            <div className={styles.servises} >
-            <h1 style={{fontSize : '28px'}}>الخدمات المتاحة</h1>
-             <ul style={{marginRight : '20px'}}>
-              {MarketDetialsArr.services.map((item , id)=>{
-                return (
-                  <li key={id} style={{fontSize : '20px', padding : '10px 0px'}}>{item.name}</li>
-                )
-              })}
-
-             </ul>
-          </div>
-             : null
-           }
-         
-          
-         
-          <div style={{color : '#fff', marginBottom : '50px'}}>
-             <div className="card text-center">
-             <div className="card-header" style={{ backgroundColor : '#fff'}}>
-                     <h1 style={{fontSize : '32px', color : '#055c97', textAlign : 'start'}}>الخريطه</h1>
-                  </div>
-                  <div className="card-body">
-                  <div >
-                      <LazyLoad height={"100%"} once>
-                      <MatagrLocation latt={MarketDetialsArr} />
-                        </LazyLoad>
-                    </div>
-                </div>
-                 
-            </div>
-         </div>
-        </LazyLoad>
-      
-        </div>
-        <div className="col-12 col-md-4">
-        <LazyLoad height={"100%"} once>
-              <div >
-                <h2 className="text-center" >تابعنا علي صفحتنا </h2>
-                  <LazyLoad height={"100%"} once>
-                  <iframe
-                  src={`https://www.facebook.com/plugins/page.php?href=${MarketDetialsArr.face}%2Ffacebook&tabs=timeline&width=300&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
-                  style={{ width: "300px", height: "500px" }}
-                  scrolling="no"
-                  frameBorderr="0"
-                  allowFullScreen={true}
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  title="Facebook"
-                  loading="lazy"
-                />
-                  </LazyLoad>
-              </div>
-              {screen.width > 767 ? 
-                    <div style={{padding : '0px 20px'}}>
-                <h1 style={{fontSize : '28px'}}>عدد المشاهدات</h1>
-                <ImEye />
-                <p>5500</p>
-              </div>
-
-                   :
-                   null
-                   }
-            </LazyLoad>
-        </div>
-
-
-       </div>
-
-     </div>
-     : 
-     <div style={{height : '100vh'}}></div>
-     } 
-  </div>
-    </div>
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

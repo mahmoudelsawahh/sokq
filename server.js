@@ -3,7 +3,7 @@ const { parse } = require('url')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
-const hostname = 'souq-mahala.com'
+const hostname = 'localhost'
 // const hostname = 'localhost'
 const port = 3015;
 // when using middleware `hostname` and `port` must be provided below
