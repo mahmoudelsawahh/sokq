@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next-boost",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next-boost",
     "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.11",
+    "@next-boost/next-boost": "^0.15.2",
     "@react-google-maps/api": "^2.19.2",
     "@reduxjs/toolkit": "^1.9.6",
     "axios": "^1.5.1",
@@ -23,6 +24,7 @@
     "google-maps-react": "^2.0.6",
     "lightgallery": "^2.7.2",
     "next": "13.4.12",
+    "next-boost": "^0.12.0",
     "next-share": "^0.25.0",
     "primeicons": "^6.0.1",
     "primereact": "^9.6.2",
