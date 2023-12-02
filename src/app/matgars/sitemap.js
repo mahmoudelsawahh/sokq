@@ -26,14 +26,14 @@ export async function postApi() {
   export default async function sitemap(){
     const baseLocalUrl = "https://souq-mahala.com"
 
-    const allPosts = await postApi()
+  //   const allPosts = await postApi()
 
-    const postsUrl = allPosts? allPosts.matgars.map((item)=>{
-      return {
-        url : `${baseLocalUrl}/matgarr/${item.id}/${item.name.replace(/\s+/g, '-')}`,
-        lastModified : new Date()
-      }
-   }) : []
+  //   const postsUrl = allPosts? allPosts.matgars.map((item)=>{
+  //     return {
+  //       url : `${baseLocalUrl}/matgarr/${item.id}/${item.name.replace(/\s+/g, '-')}`,
+  //       lastModified : new Date()
+  //     }
+  //  }) : []
 
 
 
@@ -138,6 +138,6 @@ export async function postApi() {
             url: `${baseLocalUrl}/sign-up`,
             lastModified: new Date(),
           },
-                ...postsUrl,
+                // ...postsUrl,
       ]
   }

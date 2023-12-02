@@ -44,7 +44,6 @@ const Home = () => {
   //   }
   // }, [dispatch, GetFromCartAarr]);
 
-
   return (
     <div>
       
