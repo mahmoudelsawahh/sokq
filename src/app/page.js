@@ -1,4 +1,6 @@
+"use client"
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 // const FooterBar = dynamic(() => import('/src/Static/FooterBar/FooterBar'), {
 //   ssr : false
 // })
@@ -16,7 +18,21 @@ import dynamic from "next/dynamic";
   //  })
 
 export default function App() {
+  const [consoleLogs, setConsoleLogs] = useState([]);
 
+  useEffect(() => {
+    const originalConsoleError = console.error;
+    console.error = (...args) => {
+      setConsoleLogs((prevLogs) => [...prevLogs, args]);
+      originalConsoleError(...args);
+    };
+
+    return () => {
+      console.error = originalConsoleError;
+    };
+  }, []);
+
+  console.log(consoleLogs)
   return (
    <>
     <Home />

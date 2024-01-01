@@ -19,7 +19,6 @@ import image_4 from '/public/4imag.webp'
 import image_5 from '/public/5imag.webp'
 import image_6 from '/public/6imag.webp'
 import personalImage from '/public/person-sale-sign-1785138.png'
-
 import Carousel from 'react-bootstrap/Carousel';
 import Image from "next/image";
 
