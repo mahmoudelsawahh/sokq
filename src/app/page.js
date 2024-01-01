@@ -32,7 +32,18 @@ export default function App() {
     };
   }, []);
 
-  console.log(consoleLogs)
+   useEffect(()=>{
+    console.log(consoleLogs)
+    if(consoleLogs.length > 0){
+      const errors = consoleLogs.map((ele)=>ele[0])
+     const x =  errors.map((ele)=> ele.startsWith('refused to'))
+     const y = x.filter((ele)=>ele == true)
+     if(y[0]){
+      window.location.reload()
+     }
+    }
+   },[consoleLogs])
+
   return (
    <>
     <Home />
